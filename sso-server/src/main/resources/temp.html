@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSO用户登录后返回的授权页面</title>
+</head>
+<body>
+<h1>SSO用户登录后返回的授权页面，实际开发中为了更好的用户体验，必须要变成自动提交，让用户不需要经过这一步</h1>
+<h1>OAuth Approval</h1>
+<p>Do you authorize 'yibo1' to access your protected resources?</p>
+<form id='confirmationForm' name='confirmationForm' action='/server/oauth/authorize' method='post'>
+    <input name='user_oauth_approval' value='true' type='hidden'/>
+    <input type='hidden' name='_csrf' value='17fb050c-4f6f-4e58-8390-143418243392' />
+    <ul>
+        <li>
+        <div class='form-group'>scope.all:
+            <input type='radio' name='scope.all' value='true'>Approve</input>
+            <input type='radio' name='scope.all' value='false' checked>Deny</input>
+        </div>
+        </li>
+    </ul>
+    <label>
+        <input name='authorize' value='Authorize' type='submit'/>
+    </label>
+</form>
+</body></html>
